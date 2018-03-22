@@ -48,7 +48,7 @@ module "dd-agent" {
 
   container_definition_additional = "\"cpu\": 10"
 
-  # Need service discovery or lb
+  # Need service discovery
   # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/common_use_cases.html
   # LB, Consul, CloudWatch/Lambda
 }
