@@ -19,7 +19,8 @@ variable "ecs_desired_count" {
 }
 
 variable "enabled" {
-  default = true
+  description = "Set to false to prevent the module from creating anything"
+  default     = true
 }
 
 variable "environment" {

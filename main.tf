@@ -24,12 +24,6 @@ module "dd-agent" {
     type = "distinctInstance"
   }]
 
-  # Don't need - Make sure these are optional
-  app_port       = 8125
-  lb_subnet_ids  = ["${data.aws_subnet_ids.private_subnet_ids.ids}"]
-  lb_enable_http = true
-  lb_internal    = true
-
   docker_environment = "${list(
     map("name", "DD_API_KEY", "value", "${var.dd_api_key}"),
     map("name", "SD_BACKEND", "value", "docker"),
