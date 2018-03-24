@@ -27,7 +27,7 @@ module "dd-agent" {
   docker_environment = "${list(
     map("name", "DD_API_KEY", "value", "${var.dd_api_key}"),
     map("name", "SD_BACKEND", "value", "docker"),
-    map("name", "DD_TAGS",    "value", "clustername:${var.ecs_cluster_name} environment:one")
+    map("name", "DD_TAGS",    "value", "clustername:${var.ecs_cluster_name} environment:${var.environment}")
     )}"
 
   docker_mount_points = "${list(
